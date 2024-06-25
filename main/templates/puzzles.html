@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Word Search Puzzle{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Puzzle Game - Historical Figures</title>
+</head>
+
+<body>
+    <h1>Puzzle Game - Historical Figures</h1>
+
+    {% for question in questions %}
+    <div>
+        <h3>{{ question.question }}</h3>
+        <form method="post" action="{% url 'submit_puzzle_answer' %}">
+            {% csrf_token %}
+            {% for choice in question.choices %}
+            <input type="radio" name="{{ question.question }}" value="{{ choice }}"> {{ choice }}<br>
+            {% endfor %}
+            <input type="hidden" name="correct_answer" value="{{ question.answer }}">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+
+</html>
+{% endblock %}

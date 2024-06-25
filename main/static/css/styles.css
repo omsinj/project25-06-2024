@@ -1,0 +1,46 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    color: #343a40;
+    margin: 2rem 0;
+}
+
+.navbar {
+    margin-bottom: 2rem;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.list-group-item {
+    margin-bottom: 0.5rem;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}

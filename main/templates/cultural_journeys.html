@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Cultural Journeys{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Cultural Journeys</h1>
+    <ul class="list-group mt-4">
+        {% for journey in journeys %}
+        <li class="list-group-item">
+            <h5>{{ journey.title }}</h5>
+            <p>{{ journey.description }}</p>
+            <a href="{{ journey.video_url }}" target="_blank">Watch Video</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

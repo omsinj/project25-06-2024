@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Creators{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Creators</h1>
+    <ul class="list-group mt-4">
+        {% for developer in developers %}
+        <li class="list-group-item">
+            <h5>{{ developer.name }}</h5>
+            <p>{{ developer.bio }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

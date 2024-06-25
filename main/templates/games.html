@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% extends 'base.html' %}
+
+{% block title %}Games{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Games</h1>
+    <img src="https://example.com/games-book.jpg" alt="Games Book" class="img-fluid mt-4">
+    <ul class="list-group mt-4">
+        <li class="list-group-item"><a href="{% url 'cultural_trivia' %}">Cultural Trivia</a></li>
+        <li class="list-group-item"><a href="{% url 'quizzes' %}">Quizzes</a></li>
+        <li class="list-group-item"><a href="{% url 'puzzles' %}">Puzzles</a></li>
+    </ul>
+</div>
+{% endblock %}

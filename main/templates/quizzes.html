@@ -1,0 +1,27 @@
+<!-- main/templates/quizzes.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz</title>
+</head>
+
+<body>
+    {% if error %}
+    <p>{{ error }}</p>
+    {% else %}
+    <h2>{{ question }}</h2>
+    <form method="post" action="{% url 'submit_quiz_answer' %}">
+        {% csrf_token %}
+        {% for option in options %}
+        <input type="radio" name="answer" value="{{ option }}"> {{ option }}<br>
+        {% endfor %}
+        <input type="hidden" name="correct_answer" value="{{ correct_answer }}">
+        <button type="submit">Submit</button>
+    </form>
+    <p>Answer given by OpenAI: {{ answer_given }}</p>
+    {% endif %}
+</body>
+
+</html>

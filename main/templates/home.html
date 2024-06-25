@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to our games and collaboration platform</h1>
+    <img src="https://example.com/handshake.jpg" alt="Handshake" class="img-fluid mt-4">
+    <div class="mt-4">
+        <h3>Recommended for you:</h3>
+        <ul class="list-group mt-4">
+            {% for item in recommendations %}
+            <li class="list-group-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="mt-4">
+        <a href="{% url 'games' %}" class="btn btn-primary btn-lg">Explore Games</a>
+    </div>
+</div>
+{% endblock %}
